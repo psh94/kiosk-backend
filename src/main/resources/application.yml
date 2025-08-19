@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/kiosk
+    username: postgres
+    password: 872034
+    driver-class-name: org.postgresql.Driver
+
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: com.shbak.kiosk.model
+  configuration:
+    map-underscore-to-camel-case: true

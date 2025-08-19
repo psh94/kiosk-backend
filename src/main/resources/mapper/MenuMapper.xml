@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shbak.kiosk.repository.MenuMapper">
+    <select id="findMenu" resultType="com.shbak.kiosk.model.Menu">
+        SELECT id, name FROM category
+    </select>
+
+    <select id="findMenuById" resultType="com.shbak.kiosk.model.Menu">
+        SELECT id, name FROM category where id = #{id}
+    </select>
+
+    <insert id="addMenu">
+        insert into category(id, name) values (#{id}, #{name})
+    </insert>
+
+    <delete id="deleteMenuById">
+        delete from category where id = #{id};
+    </delete>
+
+</mapper>
