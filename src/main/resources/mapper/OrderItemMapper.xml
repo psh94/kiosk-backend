@@ -3,15 +3,15 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.shbak.kiosk.repository.OrderItemMapper">
-    <select id="findOrderItems" resultType="com.shbak.kiosk.model.OrderItem">
+    <select id="findOrderItems" resultType="com.shbak.kiosk.entity.OrderItem">
         SELECT * FROM order_item
     </select>
 
-    <select id="findOrderItemsByOrderId" resultType="com.shbak.kiosk.model.OrderItem">
+    <select id="findOrderItemsByOrderId" resultType="com.shbak.kiosk.entity.OrderItem">
         SELECT * FROM order_item
     </select>
 
-    <select id="findOrderItemById" resultType="com.shbak.kiosk.model.OrderItem">
+    <select id="findOrderItemById" resultType="com.shbak.kiosk.entity.OrderItem">
         SELECT * FROM order_item where id = #{id}
     </select>
 

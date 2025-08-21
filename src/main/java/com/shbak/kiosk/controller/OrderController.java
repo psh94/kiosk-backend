@@ -1,9 +1,8 @@
 package com.shbak.kiosk.controller;
 
-import com.shbak.kiosk.model.Order;
+import com.shbak.kiosk.entity.Order;
 import com.shbak.kiosk.service.OrderService;
 import lombok.RequiredArgsConstructor;
-import org.apache.ibatis.annotations.Update;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

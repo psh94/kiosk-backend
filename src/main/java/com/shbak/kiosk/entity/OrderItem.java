@@ -1,9 +1,13 @@
-package com.shbak.kiosk.model;
+package com.shbak.kiosk.entity;
 
 import jakarta.validation.constraints.NotNull;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class OrderItem {
 
     @NotNull
@@ -17,5 +21,4 @@ public class OrderItem {
 
     @NotNull
     public Long orderId;
-
 }

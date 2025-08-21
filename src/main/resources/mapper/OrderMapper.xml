@@ -3,11 +3,11 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.shbak.kiosk.repository.OrderMapper">
-    <select id="findOrders" resultType="com.shbak.kiosk.model.Order">
+    <select id="findOrders" resultType="com.shbak.kiosk.entity.Order">
         SELECT * FROM orders
     </select>
 
-    <select id="findOrderById" resultType="com.shbak.kiosk.model.Order">
+    <select id="findOrderById" resultType="com.shbak.kiosk.entity.Order">
         SELECT * FROM orders where id = #{id}
     </select>
 

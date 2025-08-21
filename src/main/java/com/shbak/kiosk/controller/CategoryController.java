@@ -1,6 +1,6 @@
 package com.shbak.kiosk.controller;
 
-import com.shbak.kiosk.model.Category;
+import com.shbak.kiosk.entity.Category;
 import com.shbak.kiosk.service.CategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

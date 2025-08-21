@@ -1,6 +1,6 @@
 package com.shbak.kiosk.controller;
 
-import com.shbak.kiosk.model.Menu;
+import com.shbak.kiosk.entity.Menu;
 import com.shbak.kiosk.service.MenuService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +14,8 @@ public class MenuController {
 
     private final MenuService menuService;
 
-
     @GetMapping
-    public List<Menu> findMenus() {
+    public List<Menu> findMenuList() {
         return menuService.findMenu();
     }
 

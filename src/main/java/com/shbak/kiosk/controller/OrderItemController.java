@@ -1,6 +1,6 @@
 package com.shbak.kiosk.controller;
 
-import com.shbak.kiosk.model.OrderItem;
+import com.shbak.kiosk.entity.OrderItem;
 import com.shbak.kiosk.service.OrderItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,15 +1,18 @@
-package com.shbak.kiosk.model;
+package com.shbak.kiosk.entity;
 
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@ToString
+@NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Order {
 
     @NotNull
     public Long id;
 
+    @NotNull
     public int totalPrice;
 }

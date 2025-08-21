@@ -1,6 +1,6 @@
 package com.shbak.kiosk.service;
 
-import com.shbak.kiosk.model.Menu;
+import com.shbak.kiosk.entity.Menu;
 
 import java.util.List;
 

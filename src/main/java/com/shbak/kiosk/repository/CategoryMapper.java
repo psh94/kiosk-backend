@@ -1,6 +1,6 @@
 package com.shbak.kiosk.repository;
 
-import com.shbak.kiosk.model.Category;
+import com.shbak.kiosk.entity.Category;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

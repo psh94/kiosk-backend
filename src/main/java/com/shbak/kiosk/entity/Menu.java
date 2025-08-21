@@ -1,12 +1,14 @@
-package com.shbak.kiosk.model;
+package com.shbak.kiosk.entity;
 
 import jakarta.validation.constraints.NotNull;
-import lombok.Data;
-import org.w3c.dom.Text;
+import lombok.*;
 
 
-
-@Data
+@Getter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Menu {
 
     @NotNull

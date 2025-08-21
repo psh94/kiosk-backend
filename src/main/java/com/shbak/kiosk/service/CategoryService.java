@@ -1,6 +1,6 @@
 package com.shbak.kiosk.service;
 
-import com.shbak.kiosk.model.Category;
+import com.shbak.kiosk.entity.Category;
 
 import java.util.List;
 
