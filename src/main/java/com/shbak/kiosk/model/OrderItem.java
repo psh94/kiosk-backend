@@ -2,24 +2,20 @@ package com.shbak.kiosk.model;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
-import org.w3c.dom.Text;
-
-
 
 @Data
-public class Menu {
+public class OrderItem {
 
     @NotNull
     public Long id;
 
     @NotNull
-    public String name;
+    public int quantity;
 
     @NotNull
-    public Long price;
+    public Long menuId;
 
     @NotNull
-    public Long categoryId;
+    public Long orderId;
 
-    public String description;
 }

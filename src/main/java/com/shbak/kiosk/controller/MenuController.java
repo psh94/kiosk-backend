@@ -2,19 +2,18 @@ package com.shbak.kiosk.controller;
 
 import com.shbak.kiosk.model.Menu;
 import com.shbak.kiosk.service.MenuService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/menu")
 public class MenuController {
 
     private final MenuService menuService;
 
-    public MenuController(MenuService menuService) {
-        this.menuService = menuService;
-    }
 
     @GetMapping
     public List<Menu> findMenus() {
@@ -22,12 +21,12 @@ public class MenuController {
     }
 
     @PostMapping
-    public void addMenu(Menu menu) {
+    public void addMenu(@RequestBody Menu menu) {
         menuService.addMenu(menu);
     }
 
     @DeleteMapping
-    public void deleteMenuById(Long id){
+    public void deleteMenuById(@RequestBody Long id){
         menuService.deleteMenuById(id);
     }
 

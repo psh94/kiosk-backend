@@ -2,18 +2,16 @@ package com.shbak.kiosk.service;
 
 import com.shbak.kiosk.model.Category;
 import com.shbak.kiosk.repository.CategoryMapper;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class CategoryServiceImpl implements CategoryService{
 
     private final CategoryMapper categoryMapper;
-
-    public CategoryServiceImpl(CategoryMapper categoryMapper) {
-        this.categoryMapper = categoryMapper;
-    }
 
     @Override
     public List<Category> findCategories() {
