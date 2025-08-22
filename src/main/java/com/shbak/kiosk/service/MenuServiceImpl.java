@@ -24,6 +24,9 @@ public class MenuServiceImpl implements MenuService{
     @Override
     @Transactional
     public void addMenu(Menu menu) {
+        if(menu == null){
+            throw new IllegalArgumentException("menu가 null입니다.");
+        }
         menuMapper.addMenu(menu);
     }
 
