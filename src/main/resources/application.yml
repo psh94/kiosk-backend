@@ -7,6 +7,6 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml
-  type-aliases-package: com.shbak.kiosk.model
+  type-aliases-package: com.shbak.kiosk.entity
   configuration:
     map-underscore-to-camel-case: true

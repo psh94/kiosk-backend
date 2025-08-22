@@ -20,11 +20,6 @@ public class CategoryServiceImpl implements CategoryService{
         return categoryMapper.findCategories();
     }
 
-    @Override
-    @Transactional
-    public Category findCategoryById(Long id) {
-        return categoryMapper.findCategoryById(id);
-    }
 
     @Override
     @Transactional

@@ -20,11 +20,6 @@ public class MenuServiceImpl implements MenuService{
         return menuMapper.findMenu();
     }
 
-    @Override
-    @Transactional
-    public Menu findMenuById(Long id) {
-        return menuMapper.findMenuById(id);
-    }
 
     @Override
     @Transactional

@@ -7,7 +7,6 @@ import java.util.List;
 public interface CategoryService {
 
     List<Category> findCategories();
-    Category findCategoryById(Long id);
     void addCategory(Category category);
     void deleteCategoryById(Long id);
 }
