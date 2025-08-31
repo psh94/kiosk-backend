@@ -14,19 +14,19 @@
     <select id="getTotalPriceByJoin" resultType="long">
         SELECT COALESCE(SUM(m.price * o.quantity), 0)
         FROM order_item o
-        INNER JOIN menu m ON o.menu_id = m.id
+        JOIN menu m ON o.menu_id = m.id
         WHERE o.order_id = #{orderId}
     </select>
 
-    <update id="updateOrderTotalPrice">
+    <update id="updateOrderTotalPrice" >
         UPDATE orders SET total_price = #{totalPrice} where id = #{id}
     </update>
 
-    <insert id="addOrder">
-        insert into orders(id, total_price) values (#{id}, #{totalPrice})
+    <insert id="addOrder" parameterType="com.shbak.kiosk.entity.Order" useGeneratedKeys="true" keyProperty="id">
+        insert into orders(date, user_id) values (CURRENT_TIMESTAMP, #{userId})
     </insert>
 
-    <delete id="deleteOrderById">
+    <delete id="deleteOrderById" parameterType="long">
         delete from orders where id = #{id};
     </delete>
 

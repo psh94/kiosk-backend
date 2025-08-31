@@ -7,11 +7,11 @@
         SELECT * FROM order_item where id = #{id}
     </select>
 
-    <insert id="addOrderItem">
-        insert into order_item(id, menu_id, quantity, order_id) values (#{id}, #{menuId}, #{quantity}, #{orderId})
+    <insert id="addOrderItem" parameterType="com.shbak.kiosk.entity.OrderItem" useGeneratedKeys="true" keyProperty="id">
+        insert into order_item(menu_id, quantity, order_id) values (#{menuId}, #{quantity}, #{orderId})
     </insert>
 
-    <delete id="deleteOrderItemById">
+    <delete id="deleteOrderItemById" parameterType="long">
         delete from order_item where id = #{id};
     </delete>
 </mapper>

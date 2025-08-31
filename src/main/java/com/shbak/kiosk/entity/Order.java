@@ -3,6 +3,8 @@ package com.shbak.kiosk.entity;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Getter
 @ToString
 @NoArgsConstructor
@@ -14,5 +16,8 @@ public class Order {
     public Long id;
 
     @NotNull
-    public int totalPrice;
+    public LocalDateTime date;
+
+    @NotNull
+    public Long userId;
 }

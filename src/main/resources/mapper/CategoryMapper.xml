@@ -11,11 +11,11 @@
         SELECT id, name FROM category where id = #{id}
     </select>
 
-    <insert id="addCategory">
-        insert into category(id, name) values (#{id}, #{name})
+    <insert id="addCategory" parameterType="com.shbak.kiosk.entity.Category" useGeneratedKeys="true" keyProperty="id">
+        insert into category(name) values (#{name})
     </insert>
 
-    <delete id="deleteCategoryById">
+    <delete id="deleteCategoryById" parameterType="long">
         delete from category where id = #{id};
     </delete>
 

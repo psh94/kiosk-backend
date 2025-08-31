@@ -11,11 +11,11 @@
         SELECT * FROM menu where id = #{id}
     </select>
 
-    <insert id="addMenu">
-        insert into menu(id, name, price, description, category_id) values (#{id}, #{name}, #{price}, #{description},#{categoryId})
+    <insert id="addMenu" parameterType="com.shbak.kiosk.entity.Menu" useGeneratedKeys="true" keyProperty="id">
+        insert into menu(name, price, description, category_id) values (#{name}, #{price}, #{description},#{categoryId})
     </insert>
 
-    <delete id="deleteMenuById">
+    <delete id="deleteMenuById" parameterType="long">
         delete from menu where id = #{id};
     </delete>
 
