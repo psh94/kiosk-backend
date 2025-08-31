@@ -1,5 +1,5 @@
 DDL
-
+```
 create table category (
 	id bigint generated always as identity primary key,
 	name varchar(255) not null
@@ -45,3 +45,4 @@ create table orderItems (
 		references menu (id)
 		on delete cascade
 )
+```
