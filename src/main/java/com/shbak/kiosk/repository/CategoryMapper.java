@@ -9,7 +9,7 @@ import java.util.List;
 public interface CategoryMapper {
 
     List<Category> findCategories();
-    Category findCategoryById(Long id);
     void addCategory(Category category);
     void deleteCategoryById(Long id);
+    boolean checkDuplicateCategoryByName(String name);
 }
