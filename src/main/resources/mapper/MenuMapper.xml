@@ -7,13 +7,16 @@
         SELECT * FROM menu
     </select>
 
-    <select id="findMenuById" resultType="com.shbak.kiosk.entity.Menu">
-        SELECT * FROM menu where id = #{id}
-    </select>
-
     <insert id="addMenu" parameterType="com.shbak.kiosk.entity.Menu" useGeneratedKeys="true" keyProperty="id">
         insert into menu(name, price, description, category_id) values (#{name}, #{price}, #{description},#{categoryId})
     </insert>
+
+    <select id="checkDuplicateMenuByName" resultType="boolean">
+        select case when count(*) > 0
+            then true else false end as result
+        from menu
+        where name = #{name}
+    </select>
 
     <delete id="deleteMenuById" parameterType="long">
         delete from menu where id = #{id};

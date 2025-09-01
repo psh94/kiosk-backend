@@ -27,6 +27,9 @@ public class MenuServiceImpl implements MenuService{
         if(menu == null){
             throw new IllegalArgumentException("menu가 null입니다.");
         }
+        if (menuMapper.checkDuplicateMenuByName(menu.name)){
+            throw new IllegalArgumentException("이미 존재하는 메뉴입니다.");
+        }
         menuMapper.addMenu(menu);
     }
 

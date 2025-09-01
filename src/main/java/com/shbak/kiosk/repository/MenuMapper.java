@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface MenuMapper {
     List<Menu> findMenu();
-    Menu findMenuById(Long id);
     void addMenu(Menu menu);
     void deleteMenuById(Long id);
+    boolean checkDuplicateMenuByName(String name);
 }
