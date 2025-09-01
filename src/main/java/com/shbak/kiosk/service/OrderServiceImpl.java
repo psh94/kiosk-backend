@@ -1,10 +1,14 @@
 package com.shbak.kiosk.service;
 
 import com.shbak.kiosk.entity.Order;
+import com.shbak.kiosk.entity.OrderItem;
+import com.shbak.kiosk.repository.OrderItemMapper;
 import com.shbak.kiosk.repository.OrderMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 
 @Service
@@ -12,11 +16,14 @@ import org.springframework.transaction.annotation.Transactional;
 public class OrderServiceImpl implements OrderService{
 
     private final OrderMapper orderMapper;
+    private final OrderItemService orderItemService;
 
     @Override
     @Transactional
-    public void addOrder(Order order) {
+    public void addOrder(List<OrderItem> orderItems) {
+        Order order = new Order();
         orderMapper.addOrder(order);
+        orderItemService.addOrderItems(orderItems , order.getId());
     }
 
     @Override
@@ -25,11 +32,4 @@ public class OrderServiceImpl implements OrderService{
         return orderMapper.getTotalPriceByJoin(id);
     }
 
-    @Override
-    @Transactional
-    public void updateOrderTotalPrice(Long id){
-        Long totalPrice = getTotalPriceByJoin(id);
-        if (totalPrice>0) throw new IllegalArgumentException("totalPrice가 0보다 작습니다.");
-        orderMapper.updateOrderTotalPrice(id, totalPrice);
-    }
 }

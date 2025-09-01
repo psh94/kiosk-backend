@@ -18,12 +18,8 @@
         WHERE o.order_id = #{orderId}
     </select>
 
-    <update id="updateOrderTotalPrice" >
-        UPDATE orders SET total_price = #{totalPrice} where id = #{id}
-    </update>
-
     <insert id="addOrder" parameterType="com.shbak.kiosk.entity.Order" useGeneratedKeys="true" keyProperty="id">
-        insert into orders(date, user_id) values (CURRENT_TIMESTAMP, #{userId})
+        insert into orders(date, user_id) values (CURRENT_TIMESTAMP, 1)
     </insert>
 
     <delete id="deleteOrderById" parameterType="long">

@@ -4,10 +4,10 @@ import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Getter
+@Builder
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class OrderItem {
 
     @NotNull
@@ -20,5 +20,6 @@ public class OrderItem {
     public Long menuId;
 
     @NotNull
+    @Setter
     public Long orderId;
 }

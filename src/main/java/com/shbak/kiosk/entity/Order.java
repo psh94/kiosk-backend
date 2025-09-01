@@ -4,12 +4,14 @@ import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
+@Builder
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class Order {
 
     @NotNull
@@ -20,4 +22,8 @@ public class Order {
 
     @NotNull
     public Long userId;
+
+    @NotNull
+    public List<OrderItem> orderItems = new ArrayList<>();
+
 }

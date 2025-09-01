@@ -1,9 +1,12 @@
 package com.shbak.kiosk.controller;
 
 import com.shbak.kiosk.entity.Order;
+import com.shbak.kiosk.entity.OrderItem;
 import com.shbak.kiosk.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -13,12 +16,7 @@ public class OrderController {
     private final OrderService orderService;
 
     @PostMapping
-    public void addOrder(@RequestBody Order order){
-        orderService.addOrder(order);
-    }
-
-    @PutMapping
-    public void updateOrder(@RequestBody Long id){
-        orderService.updateOrderTotalPrice(id);
+    public void addOrder(@RequestBody List<OrderItem> orderItems){
+        orderService.addOrder(orderItems);
     }
 }
