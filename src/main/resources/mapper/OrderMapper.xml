@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.shbak.kiosk.repository.OrderMapper">
-    <select id="findOrders" resultType="com.shbak.kiosk.entity.Order">
+    <select id="findOrders" resultType="Order">
         SELECT * FROM orders
     </select>
 
-    <select id="findOrderById" resultType="com.shbak.kiosk.entity.Order">
+    <select id="findOrderById" parameterType="long" resultType="Order">
         SELECT * FROM orders where id = #{id}
     </select>
 
-    <select id="getTotalPriceByJoin" resultType="long">
+    <select id="getTotalPriceByJoin" parameterType="long" resultType="long">
         SELECT COALESCE(SUM(m.price * o.quantity), 0)
         FROM order_item o
         JOIN menu m ON o.menu_id = m.id
         WHERE o.order_id = #{orderId}
     </select>
 
-    <insert id="addOrder" parameterType="com.shbak.kiosk.entity.Order" useGeneratedKeys="true" keyProperty="id">
+    <insert id="addOrder" parameterType="Order" useGeneratedKeys="true" keyProperty="id">
         insert into orders(date, user_id) values (CURRENT_TIMESTAMP, 1)
     </insert>
 

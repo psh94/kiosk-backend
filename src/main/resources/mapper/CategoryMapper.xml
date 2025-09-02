@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.shbak.kiosk.repository.CategoryMapper">
-    <select id="findCategories" resultType="com.shbak.kiosk.entity.Category">
+    <select id="findCategories" resultType="Category">
         SELECT id, name FROM category
     </select>
 
-    <insert id="addCategory" parameterType="com.shbak.kiosk.entity.Category" useGeneratedKeys="true" keyProperty="id">
+    <insert id="addCategory" parameterType="Category" useGeneratedKeys="true" keyProperty="id">
         insert into category(name) values (#{name})
     </insert>
 
-    <select id="checkDuplicateCategoryByName" resultType="boolean">
+    <select id="checkDuplicateCategoryByName" parameterType="string" resultType="boolean">
         select case when count(*) > 0
             then true else false end as result
         from category

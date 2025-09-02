@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.shbak.kiosk.repository.MenuMapper">
-    <select id="findMenu" resultType="com.shbak.kiosk.entity.Menu">
+    <select id="findMenu" resultType="Menu">
         SELECT * FROM menu
     </select>
 
-    <insert id="addMenu" parameterType="com.shbak.kiosk.entity.Menu" useGeneratedKeys="true" keyProperty="id">
+    <insert id="addMenu" parameterType="Menu" useGeneratedKeys="true" keyProperty="id">
         insert into menu(name, price, description, category_id) values (#{name}, #{price}, #{description},#{categoryId})
     </insert>
 
-    <select id="checkDuplicateMenuByName" resultType="boolean">
+    <select id="checkDuplicateMenuByName" parameterType="string" resultType="boolean">
         select case when count(*) > 0
             then true else false end as result
         from menu

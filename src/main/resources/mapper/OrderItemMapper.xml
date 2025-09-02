@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.shbak.kiosk.repository.OrderItemMapper">
-    <select id="findOrderItemById" resultType="com.shbak.kiosk.entity.OrderItem">
+    <select id="findOrderItemById" parameterType="long" resultType="OrderItem">
         SELECT * FROM order_item where id = #{id}
     </select>
 
-    <insert id="addOrderItem" parameterType="com.shbak.kiosk.entity.OrderItem" useGeneratedKeys="true" keyProperty="id">
+    <insert id="addOrderItem" parameterType="OrderItem" useGeneratedKeys="true" keyProperty="id">
         insert into order_item(menu_id, quantity, order_id) values (#{menuId}, #{quantity}, #{orderId})
     </insert>
 
